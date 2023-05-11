@@ -8,6 +8,8 @@ import {
 
 import Home from './Home';
 import SearchCity from './SearchCity';
+import HeatMap from './HeatmapView';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 const CustomDrawerContent = props => {
@@ -42,6 +44,10 @@ const AppDrawer = () => {
           name="Home"
           component={Home}
           options={{
+            drawerIcon: ({focused}) => (
+              <Icon name="home" size={24} color={focused ? 'white' : 'gray'} />
+            ),
+
             drawerLabelStyle: {
               fontWeight: 'bold',
               fontSize: 18,
@@ -53,6 +59,31 @@ const AppDrawer = () => {
           name="Search"
           component={SearchCity}
           options={{
+            drawerIcon: ({focused}) => (
+              <Icon
+                name="search"
+                size={24}
+                color={focused ? 'white' : 'gray'}
+              />
+            ),
+            drawerLabelStyle: {
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: 'white',
+            },
+          }}
+        />
+        <Drawer.Screen
+          name="Heatmap"
+          component={HeatMap}
+          options={{
+            drawerIcon: ({focused}) => (
+              <Icon
+                name="thermometer-outline"
+                size={24}
+                color={focused ? 'white' : 'gray'}
+              />
+            ),
             drawerLabelStyle: {
               fontWeight: 'bold',
               fontSize: 18,

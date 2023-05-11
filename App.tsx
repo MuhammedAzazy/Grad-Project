@@ -1,4 +1,3 @@
-import Screens from './src/Screens/HomeScreen';
 import React, {useState} from 'react';
 import 'react-native-gesture-handler';
 import {View, Text, Button} from 'react-native';
@@ -10,6 +9,8 @@ import LoadingScreen from './src/loadingScreen';
 import AppDrawer from './src/AppDrawer';
 import Home from './src/Home';
 import Map from './src/Map';
+import HeatMap from './src/HeatmapView';
+import WeatherPage from './src/Weather';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -20,7 +21,13 @@ const App = () => {
           component={AppDrawer}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Map" component={Map} />
+        <Stack.Screen
+          name="Map"
+          component={Map}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen name="Heatmap" component={HeatMap} />
+        {/* <Stack.Screen name="Weather" component={WeatherPage} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

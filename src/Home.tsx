@@ -16,6 +16,8 @@ import {FlatList, TextInput} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Map from './Map';
+import HeatMap from './HeatmapView';
+import WeatherPage from './Weather';
 
 const Home = ({}) => {
   const [city, setCity] = useState('');
@@ -51,23 +53,22 @@ const Home = ({}) => {
               </TouchableOpacity>
             </View>
             <View style={styles.WeatherMainContainer}>
-              <View style={styles.WeatherContainer}>
-                {/* <Image
+              {/* <Image
                   source={require('../assets/Home_icon.png')}
                   style={styles.Home_icon}
                 /> */}
-                <Icon name="cloudy-night-outline" size={160} color="white" />
+              {/* <Icon name="cloudy-night-outline" size={160} color="white" />
                 <View style={styles.line}></View>
                 <Text style={styles.Degreetxt}>20°C</Text>
-                <View style={styles.line2}></View>
-              </View>
+                <View style={styles.line2}></View> */}
+              <WeatherPage />
             </View>
             {/* Map Container */}
-            <View style={styles.containerMap}>
+            {/* <View style={styles.containerMap}>
               <View style={styles.mapWindow}>
-                <Map />
+                <HeatMap />
               </View>
-            </View>
+            </View> */}
           </View>
           {/* </ScrollView> */}
         </View>
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
   WeatherMainContainer: {
     paddingHorizontal: 20,
     marginTop: 10,
-    // height: 300,
+    height: 500,
     borderWidth: 2,
     borderColor: 'green',
   },
